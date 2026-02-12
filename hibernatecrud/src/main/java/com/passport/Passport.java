@@ -1,6 +1,14 @@
 package com.passport;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "passport")
 public class Passport {
+	
+	@Id
 	private String passportno;
 	private String name;
 	private String gender;

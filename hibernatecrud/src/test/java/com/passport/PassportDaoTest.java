@@ -37,7 +37,6 @@ public class PassportDaoTest {
         dao.close();
     }
 
-    // ✅ ADD
     @Test
     void testAddPassport() {
 
@@ -57,7 +56,6 @@ public class PassportDaoTest {
         assertEquals("Kavali", saved.getAddress());
     }
 
-    // ✅ FIND BY ID - EXISTS
     @Test
     void testFindByPassportNo() {
 
@@ -72,14 +70,12 @@ public class PassportDaoTest {
         assertEquals("Test", found.getName());
     }
 
-    // ✅ FIND BY ID - NOT EXISTS
     @Test
     void testFindByPassportNoWhenNotExists() {
         Passport found = dao.findByPassportNo("XXX999");
         assertNull(found);
     }
 
-    // ✅ UPDATE
     @Test
     void testUpdateAddress() {
 
@@ -112,7 +108,7 @@ public class PassportDaoTest {
         assertNull(deleted);
     }
 
-    // ✅ FIND ALL
+
     @Test
     void testFindAll() {
 

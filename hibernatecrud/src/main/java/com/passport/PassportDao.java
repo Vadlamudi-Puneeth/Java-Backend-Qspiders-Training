@@ -9,7 +9,6 @@ public class PassportDao {
     private EntityManagerFactory emf =
             Persistence.createEntityManagerFactory("mysql");
 
-    // 🔹 CREATE
     public void addPassport(Passport passport) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
@@ -21,7 +20,6 @@ public class PassportDao {
         em.close();
     }
 
-    // 🔹 FIND BY ID
     public Passport findByPassportNo(String passportNo) {
         EntityManager em = emf.createEntityManager();
 
@@ -31,7 +29,6 @@ public class PassportDao {
         return passport;
     }
 
-    // 🔹 FIND ALL
     public List<Passport> findAll() {
         EntityManager em = emf.createEntityManager();
 
@@ -43,7 +40,6 @@ public class PassportDao {
         return list;
     }
 
-    // 🔹 UPDATE
     public void updateAddress(String passportNo, String newAddress) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
@@ -61,7 +57,6 @@ public class PassportDao {
         em.close();
     }
 
-    // 🔹 DELETE
     public void deletePassport(String passportNo) {
         EntityManager em = emf.createEntityManager();
         EntityTransaction et = em.getTransaction();
