@@ -65,7 +65,7 @@ This module helps understand how Hibernate simplifies database management compar
 
 ---
 
-### 📁 hibernatecrud
+### 📁 feb11Assignment + feb10Assignment
 
 One of the core projects: full **Hibernate CRUD implementation**.
 
