@@ -13,7 +13,8 @@ Java-Backend-Qspiders-Training/
 ├── basicsofjdbc/             # Basic JDBC programs
 ├── learnjdbc/                # JDBC CRUD examples
 ├── hibernatebasics/          # Hibernate setup and basic mapping
-├── hibernatecrud/            # Hibernate CRUD operations + JUnit tests
+├── feb10Assignment/
+├── feb11Assignment/            # Hibernate CRUD operations + JUnit tests
 ├── junittesting/             # Unit testing with JUnit examples
 ├── .gitignore
 └── README.md
