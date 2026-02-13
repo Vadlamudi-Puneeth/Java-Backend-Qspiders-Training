@@ -15,6 +15,12 @@ Java-Backend-Qspiders-Training/
 ├── hibernatebasics/          # Hibernate setup and basic mapping
 ├── feb10Assignment/
 ├── feb11Assignment/            # Hibernate CRUD operations + JUnit tests
+├── feb12Assignment/
+├── feb13AssignmentOneToOne/
+├── feb13AssignmentMockito/
+├── MockitoPractise/
+├── onetoonemapping/
+├── MockitoWithoutHibernate/
 ├── junittesting/             # Unit testing with JUnit examples
 ├── .gitignore
 └── README.md
@@ -63,22 +69,6 @@ Introduces Hibernate ORM with:
 
 This module helps understand how Hibernate simplifies database management compared to raw JDBC.
 
----
-
-### 📁 feb11Assignment + feb10Assignment
-
-One of the core projects: full **Hibernate CRUD implementation**.
-
-Features:
-
-✨ Create, Read, Update, Delete operations on `Passport` entity  
-✨ Configured using Hibernate + MySQL (or any other DB)  
-✨ Demonstrates best practices in session & transaction handling  
-✨ Uses Maven for dependency management
-
-This module showcases a practical backend application structure.
-
----
 
 ### 📁 junittesting
 
