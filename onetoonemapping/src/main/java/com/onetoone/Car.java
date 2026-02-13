@@ -17,6 +17,14 @@ public class Car {
 	private double price;
 	private String modelYear;
 	
+	
+	
+	public Engine getEngine() {
+		return engine;
+	}
+	public void setEngine(Engine engine) {
+		this.engine = engine;
+	}
 	public int getId() {
 		return id;
 	}
@@ -55,6 +63,13 @@ public class Car {
 		this.model = model;
 		this.price = price;
 		this.modelYear = modelYear;
+	}
+	
+	public Car() {}
+	@Override
+	public String toString() {
+		return "Car [engine=" + engine + ", id=" + id + ", brand=" + brand + ", model=" + model + ", price=" + price
+				+ ", modelYear=" + modelYear + "]";
 	}
 	
 	
