@@ -37,6 +37,10 @@ public class User {
 		et.begin();
 		em.persist(c);
 		//here we are saving collage obj that's y put cascase in collage class
+		/* College (parent)
+		   		↓
+		Students (children) */
+		// parent save immediately child also saved that's y put cascade in collage
 		et.commit();
 
 	}
