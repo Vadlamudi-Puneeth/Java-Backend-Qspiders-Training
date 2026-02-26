@@ -22,7 +22,7 @@ public class BasicsofspringbootApplication {
 		ApplicationContext ioc = SpringApplication.run(BasicsofspringbootApplication.class, args);
 	
 		Doctor d = ioc.getBean(Doctor.class);
-		d.check();
+//		d.check();
 	}
 
 }
