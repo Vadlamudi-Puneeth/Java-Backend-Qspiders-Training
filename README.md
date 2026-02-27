@@ -1,98 +1,117 @@
-# Java Backend QSpiders Training
+# Java Backend Development - Project Portfolio
 
-This repository contains Java backend learning projects created during my **QSpiders Training**, focusing on core Java backend technologies such as JDBC, Hibernate, and Unit Testing.
+Welcome to the comprehensive repository of Java Backend training projects. This workspace contains a collection of 42 modular projects covering JDBC, Hibernate ORM, Spring Framework, Spring Boot, and specialized case studies.
 
-Each folder represents a different module or concept learned over time. The aim is to showcase real working code along with database connectivity and testing fundamentals.
+## 📁 Project Directory Overview
 
----
+The projects are categorized by technology stack and conceptual complexity.
 
-## 🗂 Project Structure
+### 🔌 1. JDBC Foundations
+*Basics of Database Connectivity using Java.*
 
-```
-Java-Backend-Qspiders-Training/
-├── basicsofjdbc/             # Basic JDBC programs
-├── learnjdbc/                # JDBC CRUD examples
-├── hibernatebasics/          # Hibernate setup and basic mapping
-├── feb10Assignment/
-├── feb11Assignment/            # Hibernate CRUD operations + JUnit tests
-├── feb12Assignment/
-├── feb13AssignmentOneToOne/
-├── feb13AssignmentMockito/
-├── MockitoPractise/
-├── onetoonemapping/
-├── MockitoWithoutHibernate/
-├── junittesting/             # Unit testing with JUnit examples
-├── .gitignore
-└── README.md
-```
-
-
+| Sl. No | Project Name | Description | Key Tech / Concepts |
+|---|---|---|---|
+| 1 | [basicsofjdbc](./basicsofjdbc) | Introductory JDBC operations. | MySQL, Statement, ResultSet |
+| 2 | [learnjdbc](./learnjdbc) | Advanced JDBC concepts and CRUD operations. | PreparedStatement, Batch Processing |
 
 ---
 
-## 📌 Overview of Each Module
+### ❄️ 2. Hibernate & JPA Core
+*Object-Relational Mapping (ORM) and Persistence.*
 
-### 📁 basicsofjdbc
-
-Contains fundamental JDBC programs demonstrating:
-
-- Loading the JDBC driver
-- Establishing a database connection
-- Executing SQL queries
-- Processing results using `ResultSet`
-
-Ideal for beginners to understand how plain JDBC works.
+| Sl. No | Project Name | Description | Key Tech / Concepts |
+|---|---|---|---|
+| 1 | [hibernatebasics](./hibernatebasics) | Core Hibernate setup and basic CRUD. | Configuration, SessionFactory, Entity |
+| 2 | [firstlevelcaching](./firstlevelcaching) | Demonstration of Hibernate First-Level Cache. | Session Cache, Performance |
+| 3 | [secondlevelcaching](./secondlevelcaching) | Setting up and testing Distributed Caching. | EhCache, Region Factory |
+| 4 | [fintechhibernateJPA](./fintechhibernateJPA) | Financial domain entity management. | JPA Annotations, Banking Logic |
 
 ---
 
-### 📁 learnjdbc
+### 🗺️ 3. JPA Mapping & Relationships
+*Implementing Database Relationships using JPA/Hibernate.*
 
-This folder expands on JDBC by implementing:
-
-✔ Create, Read, Update, Delete (CRUD)  
-✔ PreparedStatement usage  
-✔ Handling SQLExceptions  
-✔ Proper resource closing
-
-This is perfect practice for interacting with databases in a secure and efficient way.
-
----
-
-### 📁 hibernatebasics
-
-Introduces Hibernate ORM with:
-
-- Configuration setup (`hibernate.cfg.xml`)
-- Mappings of Java classes to database tables
-- Basic `SessionFactory` usage
-- Save / update operations
-
-This module helps understand how Hibernate simplifies database management compared to raw JDBC.
-
-
-### 📁 junittesting
-
-This folder contains **JUnit test cases** covering:
-
-✔ Unit testing service and DAO layers  
-✔ Assertions  
-✔ Test lifecycle methods  
-✔ Running tests via IDE and Maven
-
-This is essential for building testable, reliable Java applications.
+| Sl. No | Project Name | Description | Relationship Type |
+|---|---|---|---|
+| 1 | [onetoonemapping](./onetoonemapping) | One-to-One Unidirectional mapping. | `@OneToOne` |
+| 2 | [onetoonebidirectionalmapping](./onetoonebidirectionalmapping) | One-to-One Bidirectional mapping. | `mappedBy` attribute |
+| 3 | [onetomanymapping](./onetomanymapping) | One-to-Many Unidirectional mapping. | `@OneToMany`, `@JoinColumn` |
+| 4 | [onetomanybidirectionalmapping](./onetomanybidirectionalmapping) | One-to-Many Bidirectional mapping. | Parent-Child relationship |
+| 5 | [manytoonemapping](./manytoonemapping) | Many-to-One mapping implementation. | Many entities to One parent |
+| 6 | [manytomanymappinguni](./manytomanymappinguni) | Many-to-Many Unidirectional mapping. | `@JoinTable` |
+| 7 | [manytomanymappingbidirectional](./manytomanymappingbidirectional) | Many-to-Many Bidirectional mapping. | Shared Junction Table |
 
 ---
 
-## 🚀 How to Run the Projects
+### 🍃 4. Spring Framework
+*Core Spring, Dependency Injection, and MVC.*
 
-> **Prerequisites:**
-- Java JDK 8+
-- Maven
-- MySQL (or other supported DB)
-- Git
+| Sl. No | Project Name | Description | Config Mode |
+|---|---|---|---|
+| 1 | [springbasicsxmlconfig](./springbasicsxmlconfig) | Legacy Spring configuration using XML. | applicationContext.xml |
+| 2 | [springbasicsannotation](./springbasicsannotation) | Modern Spring config using Java Annotations. | `@Configuration`, `@Bean`, `@Component` |
+| 3 | [spring_hibernate](./spring_hibernate) | Integration of Spring with Hibernate. | LocalSessionFactoryBean |
+| 4 | [springmvc](./springmvc) | Traditional Spring MVC Web structure. | DispatcherServlet, Controllers |
+| 5 | [springmvcboot](./springmvcboot) | Transitioning MVC to Spring Boot. | Auto-Configuration |
 
-1. Clone the repository:
+---
 
-   ```bash
-   git clone https://github.com/Vadlamudi-Puneeth/Java-Backend-Qspiders-Training.git
-   cd Java-Backend-Qspiders-Training
+### � 5. Spring Boot & Microservices
+*Modern Java Development with Spring Boot.*
+
+| Sl. No | Project Name | Description | Key Features |
+|---|---|---|---|
+| 1 | [basicsofspringboot](./basicsofspringboot) | Core Spring Boot application setup. | Starters, Auto-Config |
+| 2 | [product_category](./product_category) | Product management with Category relationships. | Spring Data JPA, H2/MySQL |
+| 3 | [product_controller](./product_controller) | REST API development for Product entities. | `@RestController`, `@RequestMapping` |
+| 4 | [feb26EmployeeManagementSystem](./feb26EmployeeManagementSystem) | End-to-end Employee Management (EMS). | CRUD, Exceptions, DTOs |
+
+---
+
+### 🧪 6. Testing & Mocking
+*Unit testing and verification practices.*
+
+| Sl. No | Project Name | Description | Frameworks |
+|---|---|---|---|
+| 1 | [junittesting](./junittesting) | Standard Unit testing for Java classes. | JUnit 5, Assertions |
+| 2 | [mockitopractise](./mockitopractise) | Advanced Mocking with Hibernate integration. | Mockito, `@Mock`, `@InjectMocks` |
+| 3 | [mockitowithouthibernate](./mockitowithouthibernate) | Pure Mockito logic testing. | Behavior Verification |
+
+---
+
+### 📚 7. Case Studies & Assignments
+*Daily tasks and complex system designs.*
+
+| Sl. No | Folder Name | Topic / Focus | Key Concepts |
+|---|---|---|---|
+| 1 | [feb10Assignment](./feb10Assignment) | Hibernate CRUD Practice | Session methods |
+| 2 | [feb11Assignment](./feb11Assignment) | HQL / Criteria API | Complex Queries |
+| 3 | [feb12Assignment](./feb12Assignment) | JPA Repo Basics | Repository Pattern |
+| 4 | [feb13AssignmentMockito](./feb13AssignmentMockito) | Service Layer Mocking | Unit Testing Services |
+| 5 | [feb13AssignmentOneToOne](./feb13AssignmentOneToOne) | Personal Records (Aadhar/Hostel) | 1:1 Mapping |
+| 6 | [feb13Assignmentallinone](./feb13Assignmentallinone) | Education Portal (Course/Instructor) | Mixed Mappings |
+| 7 | [feb14casestudy1](./feb14casestudy1) | E-commerce Order Management | Complex Entities |
+| 8 | [feb14casestudy2](./feb14casestudy2) | Hospital Appointment System | Service Orchestration |
+| 9 | [feb14casestudy3](./feb14casestudy3) | University Management System | Multi-level Mapping |
+| 10 | [feb16Assignment](./feb16Assignment) | Social Media Posting (Posts/Comments) | 1:M Mapping |
+| 11 | [feb21CRMassignment](./feb21CRMassignment) | Customer Relationship Management | Full CRUD Logic |
+| 12 | [springcasestudy1](./springcasestudy1) | Payment Gateway Logic | Spring DI, Abstraction |
+| 13 | [springcasestudy2](./springcasestudy2) | Food Delivery App Notifications | Observer Pattern |
+| 14 | [springcasestudy3](./springcasestudy3) | Banking Loan Validation System | Strategy Pattern |
+| 15 | [hospitalmanagementsystemERP](./hospitalmanagementsystemERP) | Large Scale Hospital ERP | Complete Architecture |
+
+---
+
+## 🛠️ Getting Started
+1. **Clone the repository.**
+2. **Import into Eclipse IDE:** `File > Import > General > Existing Projects into Workspace`.
+3. **Configure Database:** Update the `persistence.xml` or `application.properties` with your MySQL credentials.
+4. **Run Projects:** Use `Run As > Spring Boot App` or `Run As > Java Application`.
+
+## 📜 Key Technologies Used
+- **Backend:** Java 17+, Spring Boot, Spring MVC
+- **Data:** Hibernate 6.x, Spring Data JPA, MySQL
+- **Testing:** JUnit 5, Mockito
+- **Build:** Maven
+
+
