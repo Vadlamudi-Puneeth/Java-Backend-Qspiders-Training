@@ -21,24 +21,24 @@ public class Main {
 		Subject sub2 = new Subject(101, "machine learning");
 		Subject sub3 = new Subject(103, "software engineering");
 		
-		List<Student> stu = List.of(s1, s2);
-		List<Subject> sub = List.of(sub1, sub2, sub3);
-		
-		// student --> subject
-		s1.setSubjects(sub);
-		s2.setSubjects(sub);
-		
-		// subject -- > student
-		sub1.setStudents(stu);
-		sub2.setStudents(stu);
-		sub3.setStudents(stu);
-		
-		et.begin();
-		em.persist(s1);
-		em.persist(s2);
-		et.commit();
-		
-		em.close();
-		
+//		List<Student> stu = List.of(s1, s2);
+//		List<Subject> sub = List.of(sub1, sub2, sub3);
+//		
+//		// student --> subject
+//		s1.setSubjects(sub);
+//		s2.setSubjects(sub);
+//		
+//		// subject -- > student
+//		sub1.setStudents(stu);
+//		sub2.setStudents(stu);
+//		sub3.setStudents(stu);
+//		
+//		et.begin();
+//		em.persist(s1);
+//		em.persist(s2);
+//		et.commit();
+//		
+//		em.close();
+//		
 	}
 }

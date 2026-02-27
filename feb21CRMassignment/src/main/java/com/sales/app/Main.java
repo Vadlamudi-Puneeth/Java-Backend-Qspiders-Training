@@ -129,7 +129,7 @@ public class Main {
 
                     System.out.print("Product ID: ");
                     Product op = em.find(Product.class, sc.nextInt());
-                    o.setProducts(List.of(op));
+                    o.setProducts(new ArrayList<>(Arrays.asList(op)));
 
                     orderService.placeOrder(o);
                     break;
