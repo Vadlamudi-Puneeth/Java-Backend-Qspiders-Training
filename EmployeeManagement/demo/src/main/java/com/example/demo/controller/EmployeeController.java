@@ -76,8 +76,27 @@ public class EmployeeController {
         return mv;
     }
     
-    
+    @GetMapping("/editEmployee")
+    public ModelAndView editEmployee(@RequestParam String email) {
 
+        ModelAndView mv = new ModelAndView();
+
+        Employee emp = service.getEmployeeByEmail(email);
+
+        mv.addObject("employee", emp);
+        mv.setViewName("update");
+
+        return mv;
+    }
+
+    @PostMapping("/updateEmployee")
+    public String updateEmployee(@ModelAttribute Employee emp) {
+
+        service.updateEmployee(emp);
+
+        return "redirect:/admin";
+    }
+    
     @PostMapping("/deleteRecord")
     public String deleteRecord(@RequestParam String email) {
 

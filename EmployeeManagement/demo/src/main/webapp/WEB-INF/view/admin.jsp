@@ -23,17 +23,26 @@
     <td>${emp.salary}</td>
     <td>${emp.role}</td>
 
-    <td>
-        <form action="/deleteRecord" method="post">
-            <input type="hidden"
-                   name="email"
-                   value="${emp.email}" />
+<td>
 
-            <button type="submit">
-                Delete
-            </button>
-        </form>
-    </td>
+    <!-- UPDATE -->
+    <a href="/editEmployee?email=${emp.email}">
+        Update
+    </a>
+
+    <!-- DELETE -->
+    <form action="/deleteRecord" method="post">
+        <input type="hidden"
+               name="email"
+               value="${emp.email}" />
+
+        <button type="submit">
+            Delete
+        </button>
+    </form>
+
+</td>
+    
 </tr>
 
 </c:forEach>

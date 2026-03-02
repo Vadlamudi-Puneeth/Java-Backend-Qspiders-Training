@@ -47,4 +47,12 @@ public class EmployeeService {
         return repo.findAll();
     }
     
+    public Employee getEmployeeByEmail(String email) {
+        return repo.findById(email).orElse(null);
+    }
+    
+    public void updateEmployee(Employee emp) {
+        repo.save(emp);
+    }
+    
 }
