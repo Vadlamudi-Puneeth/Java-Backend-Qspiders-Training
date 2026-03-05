@@ -1,0 +1,60 @@
+package com.practise.cachepractise.controller;
+
+import java.io.IOException;
+import org.springframework.http.HttpHeaders;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.practise.cachepractise.entity.FileData;
+import com.practise.cachepractise.repo.FileDataRepository;
+
+@RestController
+@RequestMapping("/files")
+public class FileDataController {
+	
+	
+	
+	@Autowired
+	FileDataRepository fdr;
+
+	@PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+	public FileData upload(@RequestParam("file") MultipartFile file) throws IOException{
+		
+		FileData fileData = new FileData();
+		
+		fileData.setFileName(file.getOriginalFilename());
+		
+		fileData.setFileType(file.getContentType());
+		
+		fileData.setData(file.getBytes());
+		
+		FileData saved = fdr.save(fileData);
+		
+		
+		return saved;
+	}
+	
+	@GetMapping("/download/{id}")
+	public ResponseEntity<byte[]> download(@PathVariable Long id) {
+
+	    FileData fileData = fdr.findById(id)
+	            .orElseThrow(() -> new RuntimeException("File Not Found"));
+
+	    return ResponseEntity.ok()
+	            .header(HttpHeaders.CONTENT_DISPOSITION,
+	                    "attachment; filename=\"" + fileData.getFileName() + "\"")
+	            .contentType(MediaType.parseMediaType(fileData.getFileType()))
+	            .body(fileData.getData());
+	}
+	
+	
+}
