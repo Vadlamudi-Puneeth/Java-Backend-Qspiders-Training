@@ -23,6 +23,7 @@ public class AccountController {
 
 	@PostMapping("/create")
 	public AccountResponseDTO create(@RequestBody AccountRequestDTO dto) {
+		System.out.println(dto.getEmail());
 		return service.createAccount(dto);
 	}
 	

@@ -2,6 +2,7 @@ package com.example.securitypractise.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,18 +19,18 @@ public class SecurityConfig {
 		return new BCryptPasswordEncoder();
 	}
 	
-@Bean
-public SecurityFilterChain filter(HttpSecurity http) throws Exception {
-    return http
-            .csrf(csrf -> csrf.disable())
-            .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/create").permitAll()
-                    .requestMatchers("/public").permitAll()
-                    .requestMatchers("/admin/**").hasRole("ADMIN")
-                    .anyRequest().authenticated()
-            )
-            .httpBasic(Customizer.withDefaults())
-            .build();
-}
+	@Bean
+	public SecurityFilterChain filter(HttpSecurity http) throws Exception {
+	    return http
+	            .csrf(csrf -> csrf.disable())
+	            .authorizeHttpRequests(auth -> auth
+	                    .requestMatchers(HttpMethod.POST, "/create").permitAll()
+	                    //.requestMatchers("/public/**").permitAll()
+	                    .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
+	                    .anyRequest().authenticated()
+	            )
+	            .httpBasic(Customizer.withDefaults())
+	            .build();
+	}
 	
 }
