@@ -1,7 +1,11 @@
 package com.example.securitypractise.service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -72,5 +76,37 @@ public class AccountService {
 		return dto;
 		
 	}
+	
+	
+	public AccountResponseDTO getById(long id) {
+		Account a = jpa.findById(id).orElseThrow(()->new RuntimeException("ID not found"));
+		return toResponse(a);
+	}
+	
+	
+	public List<AccountResponseDTO> getAll() {
+
+	    List<Account> accounts = jpa.findAll();
+
+	    List<AccountResponseDTO> response = new ArrayList<>();
+
+	    for(Account a : accounts) {
+	        response.add(toResponse(a));
+	    }
+
+	    return response;
+	}
+	
+	
+	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
+	public AccountResponseDTO deleteById(Long id) {
+	    Account account = jpa.findById(id)
+	            .orElseThrow(() -> new RuntimeException("Account not found"));
+
+	    jpa.deleteById(id);
+
+	    return toResponse(account);
+	}
+	
 	
 }
