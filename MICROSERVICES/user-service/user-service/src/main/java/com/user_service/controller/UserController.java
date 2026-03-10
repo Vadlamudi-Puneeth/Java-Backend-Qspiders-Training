@@ -31,6 +31,7 @@ public class UserController {
 	
 	@GetMapping("/hi")
 	public String getHi() {
+		System.out.println("8001 hii");
 		return "hi";
 	}
 }
